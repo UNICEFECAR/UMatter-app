@@ -1,6 +1,27 @@
 {
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
-    "strict": true
-  }
+    "strict": true,
+    "baseUrl": ".",
+    "paths": {
+      "#assets": ["./src/assets"],
+      "#backdrops": ["./src/backdrops"],
+      "#blocks": ["./src/blocks"],
+      "#components": ["./src/components"],
+      "#hooks": ["./src/hooks"],
+      "#modals": ["./src/modals"],
+      "#navigation": ["./src/navigation"],
+      "#screens": ["./src/screens"],
+      "#services": ["./src/services"],
+      "#styles": ["./src/styles"],
+      "#utils": ["src/utils"],
+      "#types": ["./src/types"]
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "babel.config.js",
+    "metro.config.js",
+    "jest.config.js"
+  ]
 }
