@@ -15,10 +15,14 @@ export interface IProject
 }
 
 export type RootStackParamList = {
+  Main: undefined;
   Home: undefined;
+  Welcome: undefined;
+  Onboarding: undefined;
   ProjectInformation: {
     project: IProject;
   };
+  About: undefined;
 };
 
 export type TNavigationFunc = NativeStackNavigationProp<RootStackParamList>;
