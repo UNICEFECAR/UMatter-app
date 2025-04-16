@@ -4,3 +4,4 @@ export * from "./BottomNavigation";
 export * from "./Header";
 export * from "./AppText";
 export * from "./Icon";
+export * from "./ButtonSelector";
