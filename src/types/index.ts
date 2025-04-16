@@ -1,4 +1,5 @@
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { ViewStyle } from "react-native";
 
 export interface IProjectResponse {
   Description: string;
@@ -26,3 +27,5 @@ export type RootStackParamList = {
 };
 
 export type TNavigationFunc = NativeStackNavigationProp<RootStackParamList>;
+
+export type TStyle = ViewStyle | ViewStyle[];
