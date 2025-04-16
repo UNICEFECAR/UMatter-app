@@ -1,5 +1,5 @@
 import { StyleSheet, TouchableOpacity, View, ViewStyle } from "react-native";
-import { IconShare } from "./sprite";
+import { IconAbout, IconArrowChevronForward, IconShare } from "./sprite";
 
 interface IIcon {
   name: string;
@@ -23,6 +23,12 @@ export const Icon = ({
   switch (name) {
     case "share":
       icon = <IconShare />;
+      break;
+    case "chevron-forward":
+      icon = <IconArrowChevronForward color={color || "black"} />;
+      break;
+    case "about":
+      icon = <IconAbout />;
       break;
   }
 
