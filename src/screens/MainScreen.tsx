@@ -3,6 +3,8 @@ import { View, StyleSheet, Text } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 import { BottomNavigation } from "#components";
+import { DashboardScreen } from "./DashboardScreen";
+import { DetailsScreen } from "./DetailsScreen";
 
 type Screen = "Dashboard" | "Details";
 
@@ -12,17 +14,9 @@ export const MainScreen = ({ navigation }: { navigation: any }) => {
   const renderScreen = () => {
     switch (currentScreen) {
       case "Dashboard":
-        return (
-          <View>
-            <Text>Dashboard</Text>
-          </View>
-        );
+        return <DashboardScreen navigation={navigation} />;
       case "Details":
-        return (
-          <View>
-            <Text>Details</Text>
-          </View>
-        );
+        return <DetailsScreen />;
     }
   };
 
