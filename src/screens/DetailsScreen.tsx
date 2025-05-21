@@ -1,11 +1,11 @@
-import { ButtonSelector } from "#components";
+import { ButtonSelector, AppHeading } from "#components";
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 
 export const DetailsScreen = () => {
   return (
     <View>
-      <Text>Details</Text>
+      <AppHeading handleMore={() => {}} />
       <ButtonSelector
         icon="share"
         text="Share application"
