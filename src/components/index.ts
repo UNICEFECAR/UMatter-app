@@ -5,3 +5,4 @@ export * from "./Header";
 export * from "./AppText";
 export * from "./Icon";
 export * from "./ButtonSelector";
+export * from "./AppHeading";

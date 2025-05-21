@@ -7,6 +7,7 @@ interface IAppText {
   isBold?: boolean;
   isError?: boolean;
   children: React.ReactNode;
+  onPress?: () => void;
 }
 
 export const AppText = ({
@@ -16,9 +17,11 @@ export const AppText = ({
   isError,
   style,
   children,
+  onPress,
 }: IAppText) => {
   return (
     <Text
+      onPress={onPress}
       style={[
         styles.text,
         namedStyle && styles[namedStyle],
@@ -38,7 +41,7 @@ const styles = StyleSheet.create({
     flexWrap: "wrap",
     flexShrink: 1,
     fontSize: 16,
-    lineHeight: 21,
+    // lineHeight: 21,
   },
   h1: {
     fontSize: 32,

@@ -18,8 +18,8 @@ export const ButtonSelector = ({
 }: IButtonSelector) => {
   return (
     <TouchableOpacity style={[styles.butonSelector, style]} onPress={onPress}>
-      <Icon size="md" name={icon} />
-      <AppText style={{ paddingLeft: 12 }}>{text}</AppText>
+      <Icon size="lg" name={icon} />
+      <AppText style={{ paddingLeft: 12, paddingBottom: 2 }}>{text}</AppText>
       <Icon
         size="md"
         style={styles.icon}
