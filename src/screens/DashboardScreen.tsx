@@ -1,7 +1,6 @@
 import React from "react";
 import {
   View,
-  Text,
   StyleSheet,
   ScrollView,
   TouchableOpacity,
@@ -29,15 +28,19 @@ export const DashboardScreen = ({
     <View style={styles.safeArea}>
       <StatusBar barStyle="dark-content" backgroundColor="red" />
       <View style={styles.container}>
-        <View style={styles.header}>
-          <View>
-            <AppText namedStyle="h2" isBold>
-              UMatter
-            </AppText>
+        <View style={{ overflow: "hidden", paddingBottom: 10 }}>
+          <View style={styles.header}>
+            <View>
+              <Image
+                source={require("../../assets/logo.png")}
+                style={{ maxWidth: 200 }}
+                resizeMode="contain"
+              />
+            </View>
+            <TouchableOpacity onPress={handleMore} style={styles.headerButton}>
+              <AppText white>More</AppText>
+            </TouchableOpacity>
           </View>
-          <TouchableOpacity onPress={handleMore} style={styles.headerButton}>
-            <AppText white>More</AppText>
-          </TouchableOpacity>
         </View>
 
         <ScrollView
@@ -66,6 +69,7 @@ export const DashboardScreen = ({
                   website_url={project.website_url}
                   appstore_url={project.appstore_url}
                   google_play_url={project.google_play_url}
+                  imageUrl={project.imageUrl}
                   style={{ marginTop: 12 }}
                   handleReadMore={() => {
                     navigation.push("ProjectInformation", {
@@ -99,12 +103,19 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFFFFF",
     borderBottomWidth: 1,
     borderBottomColor: "#F0F0F0",
+    borderBottomLeftRadius: 25,
+    borderBottomRightRadius: 25,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
   },
   headerButton: {
-    backgroundColor: "#5E60CE",
-    paddingHorizontal: 16,
+    backgroundColor: "#04ADEF",
+    paddingHorizontal: 26,
     paddingVertical: 8,
-    borderRadius: 8,
+    borderRadius: 20,
   },
   scrollView: {
     flex: 1,
