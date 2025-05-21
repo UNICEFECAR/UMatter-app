@@ -6,7 +6,7 @@ export default function useGetProjects() {
     queryKey: ["projects"],
     queryFn: async () => {
       const response = await fetch(
-        "https://138f-84-43-197-84.ngrok-free.app/api/projects"
+        "http://localhost:1337/api/projects?populate=*"
       );
       if (!response.ok) {
         throw new Error("Network response was not ok");
@@ -16,6 +16,7 @@ export default function useGetProjects() {
         ...x,
         name: x.Name,
         description: x.Description,
+        imageUrl: x.image?.url || null,
       }));
     },
   });
