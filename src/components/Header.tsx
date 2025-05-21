@@ -1,4 +1,5 @@
 import { StyleSheet, TouchableOpacity, View, Text } from "react-native";
+import Icon from "react-native-vector-icons/Ionicons";
 
 interface IHeader {
   text: string;
@@ -11,7 +12,7 @@ export const Header = ({ text, goBack = true, handleGoBack }: IHeader) => {
     <View style={styles.header}>
       {goBack && (
         <TouchableOpacity onPress={handleGoBack}>
-          <Text style={{ color: "#04ADEF" }}>Back</Text>
+          <Icon size={25} color="#20809E" name="chevron-back" />
         </TouchableOpacity>
       )}
       <Text style={{ marginLeft: 12, fontSize: 18 }}>{text}</Text>
