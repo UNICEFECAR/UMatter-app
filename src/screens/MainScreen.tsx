@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { View, StyleSheet, Text } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
 
 import { BottomNavigation } from "#components";
 import { DashboardScreen } from "./DashboardScreen";
@@ -16,20 +15,18 @@ export const MainScreen = ({ navigation }: { navigation: any }) => {
       case "Dashboard":
         return <DashboardScreen navigation={navigation} />;
       case "Details":
-        return <DetailsScreen />;
+        return <DetailsScreen navigation={navigation} />;
     }
   };
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: "#fff" }}>
-      <View style={styles.container}>
-        <View style={styles.screenContainer}>{renderScreen()}</View>
-        <BottomNavigation
-          currentScreen={currentScreen}
-          onSelectScreen={(screen) => setCurrentScreen(screen as Screen)}
-        />
-      </View>
-    </SafeAreaView>
+    <View style={styles.container}>
+      <View style={styles.screenContainer}>{renderScreen()}</View>
+      <BottomNavigation
+        currentScreen={currentScreen}
+        onSelectScreen={(screen) => setCurrentScreen(screen as Screen)}
+      />
+    </View>
   );
 };
 

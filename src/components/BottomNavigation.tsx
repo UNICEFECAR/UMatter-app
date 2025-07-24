@@ -1,5 +1,12 @@
+import { appStyles } from "#styles";
 import React from "react";
-import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  StyleSheet,
+  DimensionValue,
+} from "react-native";
 import HomeIcon from "react-native-vector-icons/MaterialCommunityIcons";
 import DetailsIcon from "react-native-vector-icons/Octicons";
 
@@ -7,6 +14,8 @@ interface BottomNavigationProps {
   currentScreen: string;
   onSelectScreen: (screen: string) => void;
 }
+
+const ICON_SIZE = 26;
 
 export const BottomNavigation = ({
   currentScreen,
@@ -21,8 +30,10 @@ export const BottomNavigation = ({
         <Text style={[styles.tabText]}>
           <HomeIcon
             name="home"
-            size={24}
-            color={currentScreen === "Dashboard" ? "#20809E" : "#000"}
+            size={ICON_SIZE}
+            color={
+              currentScreen === "Dashboard" ? appStyles.colorPrimary : "#000"
+            }
           />
         </Text>
       </TouchableOpacity>
@@ -34,8 +45,10 @@ export const BottomNavigation = ({
         <Text style={[styles.tabText]}>
           <DetailsIcon
             name="three-bars"
-            size={24}
-            color={currentScreen === "Details" ? "#20809E" : "#000"}
+            size={ICON_SIZE}
+            color={
+              currentScreen === "Details" ? appStyles.colorPrimary : "#000"
+            }
           />
         </Text>
       </TouchableOpacity>
@@ -46,9 +59,9 @@ export const BottomNavigation = ({
 const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
-    height: 40,
+    height: 46,
     backgroundColor: "#fff",
-    width: "90%",
+    width: appStyles.maxWidth as DimensionValue,
     borderRadius: 20,
     marginLeft: "auto",
     marginRight: "auto",
@@ -66,7 +79,7 @@ const styles = StyleSheet.create({
   },
   activeTab: {
     borderTopWidth: 3,
-    borderTopColor: "#007BFF",
+    borderTopColor: appStyles.colorPrimary,
   },
   tabText: {
     color: "#8e8e93",

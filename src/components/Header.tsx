@@ -1,3 +1,4 @@
+import { appStyles } from "#styles";
 import { StyleSheet, TouchableOpacity, View, Text } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
 
@@ -12,10 +13,10 @@ export const Header = ({ text, goBack = true, handleGoBack }: IHeader) => {
     <View style={styles.header}>
       {goBack && (
         <TouchableOpacity onPress={handleGoBack}>
-          <Icon size={25} color="#20809E" name="chevron-back" />
+          <Icon size={25} color={appStyles.colorPrimary} name="chevron-back" />
         </TouchableOpacity>
       )}
-      <Text style={{ marginLeft: 12, fontSize: 18 }}>{text}</Text>
+      <Text style={styles.text}>{text}</Text>
     </View>
   );
 };
@@ -27,4 +28,5 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginLeft: 12,
   },
+  text: { marginLeft: 12, fontSize: 24 },
 });

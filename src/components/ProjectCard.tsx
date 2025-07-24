@@ -2,6 +2,7 @@ import { Text, View, StyleSheet, TouchableOpacity, Image } from "react-native";
 
 import { TStyle } from "#types";
 import { AppText } from "./AppText";
+import { appStyles } from "#styles";
 interface IProjectCard {
   name: string;
   description: string;
@@ -12,6 +13,8 @@ interface IProjectCard {
   style?: TStyle;
   handleReadMore: () => void;
 }
+
+const LOGO_SIZE = 90;
 
 export const ProjectCard = ({
   name,
@@ -35,7 +38,7 @@ export const ProjectCard = ({
         {imageUrl && (
           <Image
             source={{ uri: imageUrl }}
-            style={{ width: 100, height: 100, marginLeft: "auto" }}
+            style={{ width: LOGO_SIZE, height: LOGO_SIZE, marginLeft: "auto" }}
             resizeMode="contain"
           />
         )}
@@ -52,22 +55,23 @@ const styles = StyleSheet.create({
   card: {
     borderWidth: 1,
     borderRadius: 16,
-    borderColor: "#04ADEF",
+    borderColor: appStyles.colorPrimary,
     padding: 16,
     flex: 1,
   },
   readMoreButton: {
-    backgroundColor: "#04ADEF",
+    backgroundColor: appStyles.colorPrimary,
     borderRadius: 100,
     marginLeft: "auto",
     marginTop: 18,
-    paddingHorizontal: 12,
     paddingVertical: 6,
+    width: LOGO_SIZE,
   },
   readMoreText: {
     color: "white",
     fontSize: 12,
     fontWeight: "600",
+    textAlign: "center",
   },
 
   container: {

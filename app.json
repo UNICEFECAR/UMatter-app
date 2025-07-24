@@ -1,32 +1,30 @@
 {
   "expo": {
-    "name": "UMatter-app",
-    "slug": "UMatter-app",
+    "name": "umatter",
+    "slug": "umatter",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/app-icon.png",
     "userInterfaceStyle": "light",
-    "newArchEnabled": true,
     "splash": {
-      "image": "./assets/splash-icon.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "image": "./assets/splash-screen.png",
+      "resizeMode": "cover"
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.usupport.UMatter-app"
+      "bundleIdentifier": "org.unicef.ecar.umatter",
+      "icon": "./assets/app-icon.png"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "org.unicef.ecar.umatter"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "plugins": [
-      "expo-secure-store"
-    ]
+    "plugins": ["expo-secure-store"]
   }
 }

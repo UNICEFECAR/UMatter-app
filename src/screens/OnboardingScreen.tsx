@@ -6,9 +6,15 @@ import {
   FlatList,
   Dimensions,
   SafeAreaView,
+  DimensionValue,
+  Image,
 } from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import * as SecureStore from "expo-secure-store";
+import { appStyles } from "#styles";
+
+import image1 from "../../assets/onboarding-image.png";
+import image2 from "../../assets/onboarding-image-2.png";
 
 import { AppText, Header } from "#components";
 
@@ -25,6 +31,7 @@ const onboardingData = [
     description: "Designed With Youth in Mind",
     footer:
       "UMatter+ helps you discover UNICEF initiatives like uSupport and U Report, all in one place.",
+    image: image1,
   },
   {
     id: "2",
@@ -32,6 +39,7 @@ const onboardingData = [
     description: "Support. Share. Make a Difference.",
     footer:
       "Easily access platforms to share your voice and get the help you need.",
+    image: image2,
   },
 ];
 
@@ -58,16 +66,15 @@ export const OnboardingScreen = ({ navigation }: OnboardingScreenProps) => {
       <View style={[styles.slide, { width }]}>
         <View style={styles.slideItem}>
           <AppText style={styles.title}>{item.description}</AppText>
-          <View
-            style={{
-              marginTop: 12,
-              backgroundColor: "white",
-              height: "70%",
-              width: "80%",
-              alignSelf: "center",
-              padding: 18,
-            }}
-          ></View>
+          {item.image && (
+            <View style={styles.imageContainer}>
+              <Image
+                source={item.image}
+                style={styles.image}
+                resizeMode="contain"
+              />
+            </View>
+          )}
           <AppText style={styles.description}>{item.footer}</AppText>
         </View>
       </View>
@@ -78,7 +85,7 @@ export const OnboardingScreen = ({ navigation }: OnboardingScreenProps) => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.container}>
-        <Header text={headerText} />
+        <Header text={headerText} handleGoBack={() => navigation.goBack()} />
         <FlatList
           ref={flatListRef}
           data={onboardingData}
@@ -127,40 +134,53 @@ export const OnboardingScreen = ({ navigation }: OnboardingScreenProps) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
   },
   slide: {
     justifyContent: "center",
     alignItems: "center",
   },
   slideItem: {
-    backgroundColor: "#2A82CD",
+    backgroundColor: appStyles.colorPrimary,
     width: Dimensions.get("window").width * 0.9,
     borderRadius: 25,
+    paddingBottom: 20,
   },
   title: {
-    fontSize: 24,
+    fontSize: 32,
     fontWeight: "bold",
     marginBottom: 20,
     textAlign: "center",
     color: "white",
     paddingTop: 20,
+    paddingHorizontal: 26,
+  },
+  imageContainer: {
+    width: "100%",
+    height: 250,
+    justifyContent: "center",
+    alignItems: "center",
+    marginVertical: 10,
+  },
+  image: {
+    width: "100%",
+    height: "100%",
+    maxHeight: 230,
   },
   description: {
     marginTop: 12,
-    fontSize: 16,
+    fontSize: 20,
     textAlign: "center",
     paddingHorizontal: 20,
     color: "white",
+    paddingHorizontal: 26,
   },
   paginationContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    width: "90%",
+    width: appStyles.maxWidth as DimensionValue,
     alignSelf: "center",
   },
-
   pagination: {
     flexDirection: "row",
     justifyContent: "center",
@@ -174,10 +194,11 @@ const styles = StyleSheet.create({
     marginHorizontal: 4,
   },
   paginationDotActive: {
-    backgroundColor: "#007BFF",
+    backgroundColor: appStyles.colorPrimary,
+    width: 17,
   },
   button: {
-    backgroundColor: "#007BFF",
+    backgroundColor: appStyles.colorPrimary,
     paddingVertical: 12,
     paddingHorizontal: 40,
     borderRadius: 25,
@@ -185,7 +206,7 @@ const styles = StyleSheet.create({
     alignSelf: "center",
   },
   buttonText: {
-    fontSize: 16,
+    fontSize: 18,
     fontWeight: "600",
   },
   skipButton: {
@@ -193,6 +214,6 @@ const styles = StyleSheet.create({
   },
   skipButtonText: {
     color: "#666",
-    fontSize: 14,
+    fontSize: 18,
   },
 });
