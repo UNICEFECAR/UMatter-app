@@ -42,16 +42,11 @@ export default function App() {
   }
 
   return (
-    <LinearGradient
-      colors={["#E8D5FF", "#F5E6FF", "#FFF0E6", "#FFF8F0", "#FFFFFF"]}
-      style={{ flex: 1 }}
-    >
-      <SafeAreaView key={key} style={{ flex: 1 }}>
-        <QueryClientProvider client={queryClient}>
-          <StatusBar translucent />
-          <Navigator />
-        </QueryClientProvider>
-      </SafeAreaView>
-    </LinearGradient>
+    <SafeAreaView key={key} style={{ flex: 1 }}>
+      <QueryClientProvider client={queryClient}>
+        <StatusBar translucent />
+        <Navigator />
+      </QueryClientProvider>
+    </SafeAreaView>
   );
 }

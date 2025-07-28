@@ -7,14 +7,14 @@ export const DetailsScreen = ({ navigation }: { navigation: any }) => {
   return (
     <View>
       <AppHeading screenName="Details" />
-      <ButtonSelector
+      {/* <ButtonSelector
         icon="share"
         text="Share application"
         onPress={() => {
           console.log("Back button pressed");
         }}
         style={{ marginTop: 25, width: appStyles.maxWidth as DimensionValue }}
-      />
+      /> */}
       <ButtonSelector
         icon="about"
         text="About"

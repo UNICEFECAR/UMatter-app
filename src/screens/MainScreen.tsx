@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { View, StyleSheet, Text } from "react-native";
+import { View, StyleSheet } from "react-native";
 
-import { BottomNavigation } from "#components";
+import { BottomNavigation, Screen } from "#components";
+
 import { DashboardScreen } from "./DashboardScreen";
 import { DetailsScreen } from "./DetailsScreen";
 
@@ -20,13 +21,15 @@ export const MainScreen = ({ navigation }: { navigation: any }) => {
   };
 
   return (
-    <View style={styles.container}>
-      <View style={styles.screenContainer}>{renderScreen()}</View>
-      <BottomNavigation
-        currentScreen={currentScreen}
-        onSelectScreen={(screen) => setCurrentScreen(screen as Screen)}
-      />
-    </View>
+    <Screen>
+      <View style={styles.container}>
+        <View style={styles.screenContainer}>{renderScreen()}</View>
+        <BottomNavigation
+          currentScreen={currentScreen}
+          onSelectScreen={(screen) => setCurrentScreen(screen as Screen)}
+        />
+      </View>
+    </Screen>
   );
 };
 

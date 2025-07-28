@@ -3,6 +3,8 @@ import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
+import { Screen } from "#components";
+
 import logoUnicef from "../../assets/logo-unicef.png";
 import welcomeScreenImage from "../../assets/welcome-screen-image.png";
 
@@ -13,33 +15,40 @@ type WelcomeScreenProps = {
 export const WelcomeScreen = ({ navigation }: WelcomeScreenProps) => {
   const { top } = useSafeAreaInsets();
   return (
-    <View style={[styles.mainContainer, { marginTop: top }]}>
-      <View style={styles.container}>
-        <View style={styles.topSection}>
-          <Text style={styles.title}>Welcome to UMatter+</Text>
-          <Text style={styles.subtitle}>
-            Your gateway to UNICEF's digital tools for support and empowerment.
-          </Text>
-        </View>
+    <Screen>
+      <View style={[styles.mainContainer, { marginTop: top }]}>
+        <View style={styles.container}>
+          <View style={styles.topSection}>
+            <Text style={styles.title}>Welcome to UMatter+</Text>
+            <Text style={styles.subtitle}>
+              Your gateway to UNICEF's digital tools for support and
+              empowerment.
+            </Text>
+          </View>
 
-        <Image
-          source={welcomeScreenImage}
-          style={styles.image}
-          resizeMode="contain"
-        />
+          <Image
+            source={welcomeScreenImage}
+            style={styles.image}
+            resizeMode="contain"
+          />
 
-        <View style={styles.bottomSection}>
-          <TouchableOpacity
-            style={styles.button}
-            onPress={() => navigation.navigate("Onboarding")}
-          >
-            <Text style={styles.buttonText}>Start your Journey</Text>
-          </TouchableOpacity>
-          <Text style={styles.poweredBy}>Powered by UNICEF Romania</Text>
-          <Image source={logoUnicef} style={styles.logo} resizeMode="contain" />
+          <View style={styles.bottomSection}>
+            <TouchableOpacity
+              style={styles.button}
+              onPress={() => navigation.navigate("Onboarding")}
+            >
+              <Text style={styles.buttonText}>Start your Journey</Text>
+            </TouchableOpacity>
+            <Text style={styles.poweredBy}>Powered by UNICEF Romania</Text>
+            <Image
+              source={logoUnicef}
+              style={styles.logo}
+              resizeMode="contain"
+            />
+          </View>
         </View>
       </View>
-    </View>
+    </Screen>
   );
 };
 

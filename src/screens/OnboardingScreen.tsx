@@ -5,13 +5,14 @@ import {
   TouchableOpacity,
   FlatList,
   Dimensions,
-  SafeAreaView,
   DimensionValue,
   Image,
 } from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import * as SecureStore from "expo-secure-store";
 import { appStyles } from "#styles";
+
+import { Screen } from "#components";
 
 import image1 from "../../assets/onboarding-image.png";
 import image2 from "../../assets/onboarding-image-2.png";
@@ -83,7 +84,7 @@ export const OnboardingScreen = ({ navigation }: OnboardingScreenProps) => {
   const headerText = onboardingData[currentIndex]?.title || "Onboarding";
 
   return (
-    <SafeAreaView style={styles.container}>
+    <Screen>
       <View style={styles.container}>
         <Header text={headerText} handleGoBack={() => navigation.goBack()} />
         <FlatList
@@ -127,7 +128,7 @@ export const OnboardingScreen = ({ navigation }: OnboardingScreenProps) => {
           </AppText>
         </View>
       </View>
-    </SafeAreaView>
+    </Screen>
   );
 };
 
@@ -170,7 +171,6 @@ const styles = StyleSheet.create({
     marginTop: 12,
     fontSize: 20,
     textAlign: "center",
-    paddingHorizontal: 20,
     color: "white",
     paddingHorizontal: 26,
   },

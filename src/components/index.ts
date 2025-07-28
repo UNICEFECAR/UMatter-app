@@ -6,3 +6,4 @@ export * from "./AppText";
 export * from "./Icon";
 export * from "./ButtonSelector";
 export * from "./AppHeading";
+export * from "./Screen";
