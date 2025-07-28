@@ -36,6 +36,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingLeft: 15,
     paddingRight: 20,
+    paddingVertical: 6,
     backgroundColor: "#FFFFFF",
     borderRadius: 25,
     shadowColor: "#000",
@@ -68,6 +69,7 @@ const styles = StyleSheet.create({
   },
   screenNameContainer: {
     position: "relative",
+    paddingLeft: 10,
   },
   screenNameText: {
     fontSize: 20,
