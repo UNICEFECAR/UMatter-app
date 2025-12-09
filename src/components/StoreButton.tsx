@@ -37,7 +37,7 @@ export const StoreButton = ({ type, url }: IStoreButton) => {
         />
         <AppText style={{ marginLeft: 12 }}>
           <AppText style={{ color: "#66768D", fontSize: 12 }}>
-            Download from
+            {type === "web" ? "Visit the" : "Download from"}
           </AppText>
           <AppText style={{ color: "#20809E", fontSize: 16, lineHeight: 22 }}>
             {"\n"}

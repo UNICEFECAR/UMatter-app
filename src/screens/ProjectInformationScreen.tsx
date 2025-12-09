@@ -3,7 +3,7 @@ import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 
-import { AppText, Header, StoreButton } from "#components";
+import { AppText, Header, Screen, StoreButton } from "#components";
 import { RootStackParamList } from "#types";
 
 type Props = NativeStackScreenProps<RootStackParamList, "ProjectInformation">;
@@ -16,7 +16,7 @@ export const ProjectInformationScreen: React.FC<Props> = ({
   const { project } = params;
 
   return (
-    <SafeAreaView style={styles.container}>
+    <Screen style={styles.container}>
       <View>
         <Header text={project.name} handleGoBack={() => navigation.goBack()} />
         <Image
@@ -41,7 +41,7 @@ export const ProjectInformationScreen: React.FC<Props> = ({
           )}
         </View>
       </View>
-    </SafeAreaView>
+    </Screen>
   );
 };
 

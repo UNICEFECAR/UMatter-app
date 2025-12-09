@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { StatusBar } from "expo-status-bar";
-import { SafeAreaView } from "react-native-safe-area-context";
-import { LinearGradient } from "expo-linear-gradient";
 import * as SplashScreen from "expo-splash-screen";
 
 import { Navigator } from "./src/navigation/Navigator";
@@ -42,11 +40,9 @@ export default function App() {
   }
 
   return (
-    <SafeAreaView key={key} style={{ flex: 1 }}>
-      <QueryClientProvider client={queryClient}>
-        <StatusBar translucent />
-        <Navigator />
-      </QueryClientProvider>
-    </SafeAreaView>
+    <QueryClientProvider client={queryClient}>
+      <StatusBar translucent />
+      <Navigator />
+    </QueryClientProvider>
   );
 }

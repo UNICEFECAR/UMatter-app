@@ -6,7 +6,7 @@ export default function useGetProjects() {
     queryKey: ["projects"],
     queryFn: async () => {
       const response = await fetch(
-        "http://localhost:1337/api/projects?populate=*"
+        "https://catalog.unicef.ro/api/projects?populate=*"
       );
       if (!response.ok) {
         throw new Error("Network response was not ok");
