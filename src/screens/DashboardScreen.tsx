@@ -3,8 +3,6 @@ import {
   View,
   StyleSheet,
   ScrollView,
-  TouchableOpacity,
-  StatusBar,
   ActivityIndicator,
   Image,
 } from "react-native";
@@ -12,6 +10,8 @@ import {
 import { AppHeading, AppText, ProjectCard } from "#components";
 import { IProject, TNavigationFunc } from "#types";
 import { useGetProjects } from "#hooks";
+
+import mascot from "../../assets/mascot.png";
 
 export const DashboardScreen = ({
   navigation,
@@ -42,7 +42,7 @@ export const DashboardScreen = ({
         ) : (
           <View>
             <Image
-              source={require("../../assets/mascot.png")}
+              source={mascot}
               style={{ width: 100, height: 100, alignSelf: "center" }}
               resizeMode="contain"
             />
@@ -83,5 +83,6 @@ const styles = StyleSheet.create({
   scrollContent: {
     paddingHorizontal: 20,
     paddingTop: 20,
+    paddingBottom: 100,
   },
 });

@@ -15,6 +15,7 @@ interface IImage {
 }
 
 export interface IProjectResponse {
+  documentId: string;
   Description: string;
   Name: string;
   website_url: string;
@@ -28,6 +29,15 @@ export interface IProject
   name: string;
   description: string;
   imageUrl: string;
+}
+
+export interface IComment {
+  id: number;
+  documentId: string;
+  author: string;
+  content: string;
+  rating?: number;
+  createdAt: string;
 }
 
 export type RootStackParamList = {

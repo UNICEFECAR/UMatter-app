@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "umatter",
+    "name": "UNICEF Romania",
     "slug": "umatter",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -8,23 +8,49 @@
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash-screen.png",
-      "resizeMode": "cover"
+      "resizeMode": "cover",
+      "backgroundColor": "#ffffff"
     },
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "org.unicef.ecar.umatter",
-      "icon": "./assets/app-icon.png"
+      "icon": "./assets/app-icon.png",
+      "infoPlist": {
+        "CFBundleDisplayName": "UNICEF Romania"
+      }
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/app-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "org.unicef.ecar.umatter"
+      "versionCode": 4,
+      "package": "org.unicef.ecar.umatter",
+      "splash": {
+        "image": "./assets/app-icon.png",
+        "resizeMode": "contain",
+        "backgroundColor": "#FBECF0"
+      }
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "plugins": ["expo-secure-store"]
+    "plugins": [
+      "expo-secure-store",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#FBECF0",
+          "ios": {
+            "image": "./assets/app-icon.png",
+            "resizeMode": "contain"
+          },
+          "android": {
+            "image": "./assets/app-icon.png",
+            "resizeMode": "contain"
+          }
+        }
+      ]
+    ]
   }
 }

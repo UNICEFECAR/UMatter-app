@@ -33,12 +33,25 @@ export const ProjectCard = ({
           <AppText isBold style={{ marginTop: 12 }} namedStyle="h2">
             {name}
           </AppText>
-          <Text style={{ marginTop: 12 }}>{description}</Text>
+          <Text
+            style={{ marginTop: 12 }}
+            numberOfLines={10}
+            ellipsizeMode="tail"
+          >
+            {description}
+          </Text>
         </View>
         {imageUrl && (
           <Image
             source={{ uri: imageUrl }}
-            style={{ width: LOGO_SIZE, height: LOGO_SIZE, marginLeft: "auto" }}
+            style={{
+              width: LOGO_SIZE,
+              height: LOGO_SIZE,
+              marginLeft: "auto",
+              marginTop: "auto",
+              marginBottom: "auto",
+              // borderRadius: 18,
+            }}
             resizeMode="contain"
           />
         )}

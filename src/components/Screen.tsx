@@ -12,8 +12,8 @@ export const Screen = ({ children }: { children: React.ReactNode }) => {
       colors={["#E8D5FF", "#F5E6FF", "#FFF0E6", "#FFF8F0", "#FFFFFF"]}
       style={{
         flex: 1,
-        paddingTop: Platform.OS === "ios" ? 10 : top,
-        paddingBottom: 12,
+        paddingTop: 10,
+        paddingBottom: 10,
       }}
     >
       <SafeAreaView style={{ flex: 1 }}>{children}</SafeAreaView>

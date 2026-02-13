@@ -28,10 +28,10 @@ const { width } = Dimensions.get("window");
 const onboardingData = [
   {
     id: "1",
-    title: "Why UMatter+?",
+    title: "Why UNICEF Romania?",
     description: "Designed With Youth in Mind",
     footer:
-      "UMatter+ helps you discover UNICEF initiatives like uSupport and U Report, all in one place.",
+      "UNICEF Romania helps you discover UNICEF initiatives like uSupport and U Report, all in one place.",
     image: image1,
   },
   {

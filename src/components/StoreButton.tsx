@@ -57,7 +57,6 @@ const styles = StyleSheet.create({
   view: {
     flexDirection: "row",
     alignItems: "center",
-    marginTop: 18,
     paddingHorizontal: 18,
     paddingVertical: 10,
     backgroundColor: "white",
@@ -68,6 +67,5 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
     elevation: 5,
-    marginHorizontal: 5,
   },
 });

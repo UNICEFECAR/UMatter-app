@@ -7,8 +7,8 @@ import {
   StyleSheet,
   DimensionValue,
 } from "react-native";
-import HomeIcon from "react-native-vector-icons/MaterialCommunityIcons";
-import DetailsIcon from "react-native-vector-icons/Octicons";
+import HomeIcon from "@expo/vector-icons/MaterialCommunityIcons";
+import DetailsIcon from "@expo/vector-icons/Octicons";
 
 interface BottomNavigationProps {
   currentScreen: string;

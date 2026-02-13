@@ -19,7 +19,7 @@ export const WelcomeScreen = ({ navigation }: WelcomeScreenProps) => {
       <View style={[styles.mainContainer, { marginTop: top }]}>
         <View style={styles.container}>
           <View style={styles.topSection}>
-            <Text style={styles.title}>Welcome to UMatter+</Text>
+            <Text style={styles.title}>Welcome to UNICEF Romania</Text>
             <Text style={styles.subtitle}>
               Your gateway to UNICEF's digital tools for support and
               empowerment.
@@ -39,7 +39,6 @@ export const WelcomeScreen = ({ navigation }: WelcomeScreenProps) => {
             >
               <Text style={styles.buttonText}>Start your Journey</Text>
             </TouchableOpacity>
-            <Text style={styles.poweredBy}>Powered by UNICEF Romania</Text>
             <Image
               source={logoUnicef}
               style={styles.logo}
